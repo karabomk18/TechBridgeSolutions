@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Karabo | Frontend Developer</title>
+
+  <!-- ✅ Font Awesome CDN for professional icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      color: white;
+      background: linear-gradient(135deg, #3e0d70, #0d043b);
+      overflow-x: hidden;
+      position: relative;
+      min-height: 100vh;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 2rem 4rem;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .logo span {
+      color: #00f6ff;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: white;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #00f6ff;
+    }
+
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 80vh;
+      padding: 4rem;
+      position: relative;
+      text-align: center;
+    }
+
+    .content {
+      max-width: 700px;
+      z-index: 2;
+    }
+
+    h1 {
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
+      color: #00f6ff;
+    }
+
+    .content p {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.8rem 2rem;
+      background: #00f6ff;
+      color: #000;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 25px;
+      margin-top: 1rem;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background: #00c4cc;
+    }
+
+    .section {
+      padding: 5rem 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .section h2 {
+      text-align: center;
+      color: #00f6ff;
+      font-size: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .section p {
+      text-align: center;
+      color: #ccc;
+      max-width: 800px;
+      margin: 0 auto 2rem;
+      font-size: 1.1rem;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .service {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 2rem;
+      border-radius: 12px;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+      cursor: pointer;
+    }
+
+    .service:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .service h3 {
+      color: #fff;
+      margin-bottom: 1rem;
+    }
+
+    .service p {
+      color: #ccc;
+    }
+
+    .price {
+      color: #00f6ff;
+      margin-top: 1rem;
+      font-weight: bold;
+    }
+
+    .contact {
+      text-align: center;
+      color: #ccc;
+      font-size: 1.1rem;
+    }
+
+    .contact a {
+      color: #00f6ff;
+      text-decoration: none;
+    }
+
+    .contact a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+
+    /* Blobs */
+    .blob {
+      position: absolute;
+      border-radius: 50%;
+      background: radial-gradient(circle, #00f6ff, #3e0d70);
+      opacity: 0.4;
+      animation: float 6s ease-in-out infinite;
+      z-index: 0;
+    }
+
+    .blob1 {
+      width: 150px;
+      height: 150px;
+      top: 10%;
+      left: 5%;
+    }
+
+    .blob2 {
+      width: 100px;
+      height: 100px;
+      bottom: 10%;
+      right: 15%;
+    }
+
+    .blob3 {
+      width: 80px;
+      height: 80px;
+      top: 40%;
+      right: 30%;
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-20px);
+      }
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1.5rem;
+      }
+
+      nav ul {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      h1 {
+        font-size: 2.5rem;
+      }
+
+      .blob1, .blob2, .blob3 {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">TechBridge<span>Solutions</span></div>
+    <nav>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="content">
+      <h1>Hi, I'm Karabo</h1>
+      <p>A passionate Frontend Developer who builds clean, fast, and modern websites for individuals and small businesses. I specialize in turning ideas into visually appealing online experiences.</p>
+      <a href="https://wa.me/27648250993" target="_blank" rel="noopener noreferrer" class="btn">💬 Let's Work Together</a>
+    </div>
+    <div class="blob blob1"></div>
+    <div class="blob blob2"></div>
+    <div class="blob blob3"></div>
+  </section>
+
+  <section class="section" id="about">
+    <h2>About Me</h2>
+    <p>
+      I'm a self-taught front-end web developer from South Africa who enjoys designing websites that are both creative and functional.
+      I use technologies like <strong>HTML</strong>, <strong>CSS</strong>, and <strong>JavaScript</strong> to craft responsive layouts that work on any device.
+      Whether you need a simple landing page or a professional portfolio, I’ll bring your vision to life.
+    </p>
+  </section>
+
+  <section class="section" id="services">
+    <h2>My Services</h2>
+    <div class="services">
+      <div class="service" onclick="sendWhatsApp('Basic Website')">
+        <h3>Basic Website</h3>
+        <p>A fully responsive website with 3–5 pages, designed for your business or personal brand.</p>
+        <div class="price">R1,800</div>
+      </div>
+
+      <div class="service" onclick="sendWhatsApp('Social Media Graphics')">
+        <h3>Social Media Graphics</h3>
+        <p>Five eye-catching social media designs tailored to your brand identity.</p>
+        <div class="price">R900</div>
+      </div>
+
+      <div class="service" onclick="sendWhatsApp('Landing Page')">
+        <h3>Landing Page</h3>
+        <p>A high-converting landing page for products, services, or promotions.</p>
+        <div class="price">R1,400</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="contact">
+    <h2>Contact Me</h2>
+    <div class="contact">
+      <p><i class="fas fa-phone" style="color: #00f6ff;"></i> <strong>Phone:</strong> 064 825 0993</p>
+      <p><i class="fab fa-whatsapp" style="color: #25D366;"></i> <strong>WhatsApp:</strong> <a href="https://wa.me/27648250993" target="_blank">Chat with me</a></p>
+      <p><i class="fas fa-globe" style="color: #00f6ff;"></i> <strong>Website:</strong> TechBridge Solutions-portfolio.github.io</p>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 Karabo | Frontend Developer | Built with 💻 and passion.
+  </footer>
+
+  <script>
+    function sendWhatsApp(service) {
+      const phone = "27648250993";
+      const message = encodeURIComponent(`Hi Karabo, I'm interested in your ${service} service.`);
+      const url = `https://wa.me/${phone}?text=${message}`;
+      window.open(url, "_blank");
+    }
+  </script>
+</body>
+</html>
